@@ -11,7 +11,8 @@
     <div class="col-lg-12">
       <div class="ud-text-content">
         <div data-custom-class="body">
-          <div>&nbsp;</div>-
+          <div>&nbsp;</div>
+          -
           <div>
             <span style="color: #7f7f7f;"
               ><strong
@@ -6944,9 +6945,7 @@
                                                                               href="mailto:suppport@tasklyst.app"
                                                                               target="_blank"
                                                                               >hello@tasklyst.app</a
-                                                                            >.</span
-                                                                              ></span
-                                                                            >
+                                                                            >.
                                                                           </div>
                                                                           <div
                                                                             style="line-height: 1.5;"
@@ -9467,10 +9466,15 @@
                                                                                   please
                                                                                 </span><span
                                                                                   data-custom-class="body_text"
-                                                                                  >send an email to:
-																				  <a href="mailto:hello@tasklyst.app">hello@tasklyst.app</a>
-                                                                                  </span
-                                                                                ></span
+                                                                                  >send
+                                                                                  an
+                                                                                  email
+                                                                                  to:
+                                                                                  <a
+                                                                                    href="mailto:hello@tasklyst.app"
+                                                                                    >hello@tasklyst.app</a
+                                                                                  >
+                                                                                </span></span
                                                                               ><span
                                                                                 data-custom-class="body_text"
                                                                                 >.</span
