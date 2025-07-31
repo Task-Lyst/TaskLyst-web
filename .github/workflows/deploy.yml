@@ -4,31 +4,51 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
   contents: write
   pages: write
 
+env:
+  NODE_VERSION: 20
+  CUSTOM_DOMAIN: tasklyst.app
+
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
+      - name: Detect repository name and configure base path
+        run: |
+          REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)
+          echo "VITE_BASE_PATH=/${REPO_NAME}/" >> $GITHUB_ENV
+          echo "Detected repo: $REPO_NAME"
+        if: github.event_name != 'pull_request'
+
       - name: Build project
-        run: npm run build
+        run: |
+          if [ "${GITHUB_EVENT_NAME}" = "pull_request" ]; then
+            echo "Building preview for PR #${{ github.event.pull_request.number }}"
+            npm run build
+          else
+            npm run build
+          fi
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -36,3 +56,14 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
+          cname: ${{ env.CUSTOM_DOMAIN }}
+        if: github.event_name != 'pull_request'
+
+      - name: Deploy PR Preview
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          destination_dir: pr-${{ github.event.pull_request.number }}
+        if: github.event_name == 'pull_request'
