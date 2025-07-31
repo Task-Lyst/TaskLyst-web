@@ -78,6 +78,5 @@ export const Plans = [
         value_year: (324 * 12 * 0.75).toString(),
 		description: "Business functionality for businesses to help them create, update, and delete domains with advanced and customizable features.",
 		button_text: "Contact us",
-		href: "/contact",
     }
 ];
