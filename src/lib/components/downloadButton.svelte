@@ -4,6 +4,7 @@
   export let link = null;
   export let version = null;
   export let disabledText = 'Coming soon';
+  export let width = '135px';
 </script>
 
 {#if link && link !== '#' && link !== '' && link !== null && link !== undefined && version !== null}
@@ -12,7 +13,7 @@
     download
     class="ud-main-btn ud-white-btn"
     rel="noopener"
-    style="height:55px; width: 135px; display: flex; flex-direction: column; align-items: center; justify-content: center;"
+    style="height:55px; width: {width}; display: flex; flex-direction: column; align-items: center; justify-content: center;"
   >
     <span style="display: flex; align-items: center;">
       {@html icon}&nbsp;&nbsp;{label}
@@ -27,7 +28,7 @@
   <button
     class="ud-main-btn ud-white-btn"
     disabled
-    style="height:55px; width: 135px; opacity:0.6; display: flex; flex-direction: column; align-items: center; justify-content: center;"
+    style="height:55px; width: {width}; opacity:0.6; display: flex; flex-direction: column; align-items: center; justify-content: center;"
   >
     <span style="display: flex; align-items: center;">
       {@html icon}&nbsp;&nbsp;{label}

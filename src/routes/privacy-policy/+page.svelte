@@ -12,7 +12,6 @@
       <div class="ud-text-content">
         <div data-custom-class="body">
           <div>&nbsp;</div>
-          -
           <div>
             <span style="color: #7f7f7f;"
               ><strong
@@ -30,11 +29,10 @@
             <span style="color: #7f7f7f;"
               ><span style="color: #595959; font-size: 15px;"
                 ><span data-custom-class="body_text"
-                  >This privacy notice for TaskLyst ("<strong>we</strong>," "<strong
+                  >This privacy notice for TaskLyst ("<strong>we</strong>", "<strong
                     >us</strong
-                  >," your rights is by visiting
-                  <a href="mailto:hello@tasklyst.app">hello@tasklyst.app</a>, or
-                  by ><span data-custom-class="body_text"
+                  >"
+                  <span data-custom-class="body_text"
                     >), describes how and why we might collect, store, use,
                     and/or share ("<strong>process</strong>") your information
                     when you use our services ("<strong>Services</strong>"),
@@ -562,7 +560,6 @@
                 >
               </li>
             </ul>
-            <div style="line-height: 1.5;">&nbsp;</div>
             <div id="sensitiveinfo" style="line-height: 1.5;">
               <span style="font-size: 15px;"
                 ><span data-custom-class="body_text"
@@ -571,6 +568,7 @@
                 ></span
               >
             </div>
+            <!--
             <div style="line-height: 1.5;">&nbsp;</div>
             <div style="line-height: 1.5;">
               <span style="font-size: 15px; color: #595959;"
@@ -604,6 +602,7 @@
               >
             </div>
             <div style="line-height: 1.5;">&nbsp;</div>
+            -->
             <div style="line-height: 1.5;">
               <span style="font-size: 15px; color: #595959;"
                 ><span style="font-size: 15px; color: #595959;"
@@ -1756,11 +1755,6 @@
                                                       <div
                                                         style="line-height: 1.5;"
                                                       >
-                                                        <div
-                                                          style="line-height: 1.5;"
-                                                        >
-                                                          &nbsp;
-                                                        </div>
                                                         <div
                                                           id="cookies"
                                                           style="line-height: 1.5;"
