@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.collapse.show {
+    visibility: visible;
+}
+
+.grecaptcha-badge[data-style='bottomright'] {
+    visibility: hidden;
+}
