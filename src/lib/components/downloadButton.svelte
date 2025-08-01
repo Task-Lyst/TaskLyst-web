@@ -8,11 +8,10 @@
   export let disabledText = 'Coming soon';
   export let width = '135px';
 
-  function trackDownloadEvent(source) {
-    ga.addEvent('event', 'download', {
-      event_category: 'Download',
-      event_label: source,
-      value: version || 'unknown',
+  function trackDownloadEvent(platform, version) {
+    ga.addEvent('download', {
+      platform: source,
+      version: version || 'unknown',
     });
   }
 </script>
@@ -21,7 +20,7 @@
   <a
     href={link}
     download
-    on:click={() => trackDownloadEvent(label)}
+    on:click={() => trackDownloadEvent(label, version)}
     class="ud-main-btn ud-white-btn download-btn"
     rel="noopener"
     style="width: {width};"

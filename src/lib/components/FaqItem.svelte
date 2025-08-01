@@ -13,9 +13,8 @@
       data-bs-toggle="collapse"
       data-bs-target={`#${id}`}
       on:click={() =>
-        ga.addEvent('event', 'Faq_click', {
-          event_category: 'FAQ',
-          event_label: question,
+        ga.addEvent('Faq_click', {
+          question: question,
         })}
     >
       <span class="icon flex-shrink-0">

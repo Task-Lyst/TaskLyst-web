@@ -21,7 +21,7 @@
             <a
               href="/"
               class="ud-footer-logo"
-              on:click={() => ga.addEvent('event', 'Footer_logo_click')}
+              on:click={() => ga.addEvent('Footer_logo_click', {})}
             >
               <div style="display: flex; align-items: center;">
                 <img
@@ -52,7 +52,7 @@
                 <a
                   href="mailto:hello@tasklyst.app"
                   target="_blank"
-                  on:click={() => ga.addEvent('event', 'Footer_email_click')}
+                  on:click={() => ga.addEvent('Footer_email_click', {})}
                 >
                   <i
                     class="lni lni-envelope"
@@ -81,15 +81,14 @@
               <li>
                 <a
                   href={'/#features'}
-                  on:click={() => ga.addEvent('event', 'Footer_features_click')}
+                  on:click={() => ga.addEvent('Footer_features_click', {})}
                   >Features</a
                 >
               </li>
               <li>
                 <a
                   href={'/#highlights'}
-                  on:click={() =>
-                    ga.addEvent('event', 'Footer_highlights_click')}
+                  on:click={() => ga.addEvent('Footer_highlights_click', {})}
                   >Highlights</a
                 >
               </li>
@@ -109,15 +108,14 @@
                 <a
                   href={'/privacy-policy'}
                   on:click={() =>
-                    ga.addEvent('event', 'Footer_privacy_policy_click')}
+                    ga.addEvent('Footer_privacy_policy_click', {})}
                   >Privacy policy</a
                 >
               </li>
               <li>
                 <a
                   href={'/terms-service'}
-                  on:click={() =>
-                    ga.addEvent('event', 'Footer_terms_service_click')}
+                  on:click={() => ga.addEvent('Footer_terms_service_click', {})}
                   >Terms of service</a
                 >
               </li>
@@ -131,8 +129,7 @@
               <li>
                 <a
                   href={'/#faq'}
-                  on:click={() => ga.addEvent('event', 'Footer_faq_click')}
-                  >FAQ</a
+                  on:click={() => ga.addEvent('Footer_faq_click', {})}>FAQ</a
                 >
               </li>
               <li>
@@ -141,7 +138,7 @@
                   href={'/#'}
                   data-cc="c-settings"
                   on:click={() =>
-                    ga.addEvent('event', 'Footer_cookie_preferences_click')}
+                    ga.addEvent('Footer_cookie_preferences_click', {})}
                   >Cookie preferences</a
                 >
               </li>

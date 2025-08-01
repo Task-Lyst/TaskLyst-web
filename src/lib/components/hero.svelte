@@ -105,9 +105,8 @@
             <div align="left">
               <Themeswitch
                 on:toggle={(e) => {
-                  ga.addEvent('event', 'Theme_toggle', {
-                    event_category: 'Theme',
-                    event_label: e.detail ? 'Dark' : 'Light',
+                  ga.addEvent('Theme_toggle', {
+                    theme: e.detail ? 'Dark' : 'Light',
                   });
                   theme = e.detail;
                 }}

@@ -2,10 +2,8 @@
   import { ga } from '@beyonk/svelte-google-analytics';
 
   function trackNavigationEvent(section) {
-    ga.addEvent('event', 'navigation', {
-      event_category: 'Navigation',
-      event_label: section,
-      value: 1,
+    ga.addEvent('navigation', {
+      section: section,
     });
   }
 </script>
