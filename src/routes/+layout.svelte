@@ -7,6 +7,7 @@
   import Cookieconsent from '$lib/components/cookieconsent.svelte';
   import { GoogleAnalytics } from '@beyonk/svelte-google-analytics';
   import { version } from '$app/environment';
+  import { dev } from '$app/environment';
 
   const gaOptions = {
     appVersion: version,
@@ -86,7 +87,7 @@
   <GoogleAnalytics
     bind:this={ga}
     properties={['G-33JY7X4N1F']}
-    enabled={gaEnabled}
+    enabled={gaEnabled && !dev}
   />
 
   <!-- ====== Back To Top Start ====== -->
