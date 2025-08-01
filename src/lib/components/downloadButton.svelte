@@ -22,30 +22,81 @@
     href={link}
     download
     on:click={() => trackDownloadEvent(label)}
-    class="ud-main-btn ud-white-btn"
+    class="ud-main-btn ud-white-btn download-btn"
     rel="noopener"
-    style="height:55px; width: {width}; display: flex; flex-direction: column; align-items: center; justify-content: center;"
+    style="width: {width};"
   >
-    <span style="display: flex; align-items: center;">
+    <span class="btn-content">
       {@html icon}&nbsp;&nbsp;{label}
     </span>
     {#if version}
-      <small style="font-size: 0.7rem; color: black; padding-top: 4px;">
+      <small class="btn-version">
         Version {version}
       </small>
     {/if}
   </a>
 {:else}
   <button
-    class="ud-main-btn ud-white-btn"
+    class="ud-main-btn ud-white-btn download-btn disabled"
     disabled
-    style="height:55px; width: {width}; opacity:0.6; display: flex; flex-direction: column; align-items: center; justify-content: center;"
+    style="width: {width};"
   >
-    <span style="display: flex; align-items: center;">
+    <span class="btn-content">
       {@html icon}&nbsp;&nbsp;{label}
     </span>
-    <small style="font-size: 0.8rem; color: black; padding-top: 4px;">
+    <small class="btn-version">
       {disabledText}
     </small>
   </button>
 {/if}
+
+<style>
+  .download-btn {
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+  }
+
+  .download-btn .btn-content {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+  }
+
+  .download-btn .btn-version {
+    font-size: 0.7rem;
+    color: black;
+    padding-top: 4px;
+  }
+
+  /* 🔹 Responsive scaling for smaller screens */
+  @media screen and (max-width: 768px) {
+    .download-btn {
+      font-size: 0.9rem;
+      transform: scale(0.9);
+    }
+    .download-btn .btn-content {
+      font-size: 0.9rem;
+    }
+    .download-btn .btn-version {
+      font-size: 0.65rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .download-btn {
+      font-size: 0.8rem;
+      transform: scale(0.85);
+    }
+    .download-btn .btn-content {
+      font-size: 0.8rem;
+    }
+    .download-btn .btn-version {
+      font-size: 0.6rem;
+    }
+  }
+</style>

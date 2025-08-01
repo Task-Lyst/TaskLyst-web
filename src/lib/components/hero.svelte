@@ -8,7 +8,6 @@
   export let id;
 
   let loaded = false;
-  const buttonWidth = '120px';
 
   let theme =
     typeof localStorage !== 'undefined'
@@ -66,26 +65,26 @@
               control. Runs natively on Windows, macOS, and Linux — no accounts,
               no clutter, just you and your tasks.
             </p>
-            <ul class="ud-hero-buttons flex flex-col sm:flex-row gap-3">
-              <li>
+            <ul
+              class="ud-hero-buttons flex flex-row flex-wrap sm:gap-10 list-none p-0 m-0"
+            >
+              <li class="m-0 p-0">
                 <DownloadButton
                   label="Windows"
                   icon="<i class='lni lni-windows' style='font-size: 18px;'></i>"
                   link={downloadLinks.windows_64}
                   version={latestVersion.windows_64}
-                  width={buttonWidth}
                 />
               </li>
-              <li>
+              <li class="m-0 p-0">
                 <DownloadButton
                   label="macOS"
                   icon="<i class='lni lni-apple-brand' style='font-size: 18px;'></i>"
                   link={downloadLinks.macos_64}
                   version={latestVersion.macos_64}
-                  width={buttonWidth}
                 />
               </li>
-              <li>
+              <li class="m-0 p-0">
                 <DownloadButton
                   label="Linux"
                   icon="<svg stroke='currentColor' fill='currentColor' stroke-width='0' viewBox='0 0 440 504' class='h-5 w-5' xmlns='http://www.w3.org/2000/svg'>
@@ -93,7 +92,6 @@
 									  </svg>"
                   link={downloadLinks.linux_64}
                   version={latestVersion.linux_64}
-                  width={buttonWidth}
                 />
               </li>
             </ul>

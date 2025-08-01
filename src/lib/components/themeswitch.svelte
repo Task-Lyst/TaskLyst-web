@@ -104,6 +104,12 @@
     -webkit-transform: scale(1);
     transform: scale(1);
   }
+  @media screen and (max-width: 768px) {
+    .container {
+      -webkit-transform: scale(0.75);
+      transform: scale(0.75);
+    }
+  }
   .container input {
     opacity: 0;
     width: 0;
