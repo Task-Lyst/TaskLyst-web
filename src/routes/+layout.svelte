@@ -6,8 +6,7 @@
   import Footer from '$lib/components/footer.svelte';
   import Cookieconsent from '$lib/components/cookieconsent.svelte';
   import { GoogleAnalytics } from '@beyonk/svelte-google-analytics';
-  import { version } from '$app/environment';
-  import { dev } from '$app/environment';
+  import { version, dev } from '$app/environment';
 
   const gaOptions = {
     appVersion: version,
