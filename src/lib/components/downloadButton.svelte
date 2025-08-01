@@ -1,16 +1,27 @@
 <script>
+  import { ga } from '@beyonk/svelte-google-analytics';
+
   export let label = 'Download';
   export let icon = '';
   export let link = null;
   export let version = null;
   export let disabledText = 'Coming soon';
   export let width = '135px';
+
+  function trackDownloadEvent(source) {
+    ga.addEvent('event', 'download', {
+      event_category: 'Download',
+      event_label: source,
+      value: version || 'unknown',
+    });
+  }
 </script>
 
 {#if link && link !== '#' && link !== '' && link !== null && link !== undefined && version !== null}
   <a
     href={link}
     download
+    on:click={() => trackDownloadEvent(label)}
     class="ud-main-btn ud-white-btn"
     rel="noopener"
     style="height:55px; width: {width}; display: flex; flex-direction: column; align-items: center; justify-content: center;"

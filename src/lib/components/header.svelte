@@ -1,53 +1,91 @@
+<script>
+  import { ga } from '@beyonk/svelte-google-analytics';
+
+  function trackNavigationEvent(section) {
+    ga.addEvent('event', 'navigation', {
+      event_category: 'Navigation',
+      event_label: section,
+      value: 1,
+    });
+  }
+</script>
+
 <header class="ud-header">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<nav class="navbar navbar-expand-lg">
-					<a class="navbar-brand" href="/">
-						<div style="display: flex; align-items: center;">
-							<img class="h-[40px]" src="images/logo/logo.png" alt="Logo" height="40px" />
-							<h3
-								id="logo-text"
-								style="
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <nav class="navbar navbar-expand-lg">
+          <a
+            class="navbar-brand"
+            href="/"
+            on:click={() => trackNavigationEvent('Logo')}
+          >
+            <div style="display: flex; align-items: center;">
+              <img
+                class="h-[40px]"
+                src="images/logo/logo.png"
+                alt="Logo"
+                height="40px"
+              />
+              <h3
+                id="logo-text"
+                style="
 								padding-top: 0.1cm; padding-left: 0.2cm; color: white; font-family: conthrax-sb;"
-							>
-								TASKLYST
-							</h3>
-						</div>
-					</a>
-					<button class="navbar-toggler">
-						<span class="toggler-icon" />
-						<span class="toggler-icon" />
-						<span class="toggler-icon" />
-					</button>
+              >
+                TASKLYST
+              </h3>
+            </div>
+          </a>
+          <button class="navbar-toggler">
+            <span class="toggler-icon" />
+            <span class="toggler-icon" />
+            <span class="toggler-icon" />
+          </button>
 
-					<div class="navbar-collapse">
-						<ul id="nav" class="navbar-nav mx-auto">
-							<li class="nav-item">
-								<a class="ud-menu-scroll" href="/#home">Home</a>
-							</li>
+          <div class="navbar-collapse">
+            <ul id="nav" class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a
+                  class="ud-menu-scroll"
+                  href="/#home"
+                  on:click={() => trackNavigationEvent('Home')}>Home</a
+                >
+              </li>
 
-							<li class="nav-item">
-								<a class="ud-menu-scroll" href="/#features">Features</a>
-							</li>
+              <li class="nav-item">
+                <a
+                  class="ud-menu-scroll"
+                  href="/#features"
+                  on:click={() => trackNavigationEvent('Features')}>Features</a
+                >
+              </li>
 
-							<li class="nav-item">
-								<a class="ud-menu-scroll" href="/#highlights">Highlights</a>
-							</li>
-							<!-- 
+              <li class="nav-item">
+                <a
+                  class="ud-menu-scroll"
+                  href="/#highlights"
+                  on:click={() => trackNavigationEvent('Highlights')}
+                  >Highlights</a
+                >
+              </li>
+              <!-- 
 							<li class="nav-item">
 								<a class="ud-menu-scroll" href="/#pricing">Pricing</a>
 							</li>
 						-->
-							<li class="nav-item">
-								<a class="ud-menu-scroll" href="/#faq">FAQ</a>
-							</li>
-							<!-- 
+              <li class="nav-item">
+                <a
+                  class="ud-menu-scroll"
+                  href="/#faq"
+                  on:click={() => trackNavigationEvent('FAQ')}>FAQ</a
+                >
+              </li>
+              <!-- 
 							<li class="nav-item">
 								<a class="ud-menu-scroll" href="/#waitlist">Waitlist</a>
 							</li>
 						-->
-							<!-- 
+              <!-- 
 							<li class="nav-item nav-item-has-children">
 								<a href={'#'}> Pages </a>
 								<ul class="ud-submenu">
@@ -75,15 +113,15 @@
 								</ul>
 							</li>
 							-->
-						</ul>
-					</div>
+            </ul>
+          </div>
 
-					<!-- <div class="navbar-btn d-none d-sm-inline-block">
+          <!-- <div class="navbar-btn d-none d-sm-inline-block">
 						<a href="login.html" class="ud-main-btn ud-login-btn"> Sign In </a>
 						<a class="ud-main-btn ud-white-btn" href={'#'}> Sign Up </a>
 					</div> -->
-				</nav>
-			</div>
-		</div>
-	</div>
+        </nav>
+      </div>
+    </div>
+  </div>
 </header>

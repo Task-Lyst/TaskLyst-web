@@ -1,5 +1,6 @@
 <script>
   import { version } from '$app/environment';
+  import { ga } from '@beyonk/svelte-google-analytics';
 </script>
 
 <footer class="ud-footer wow fadeInUp" data-wow-delay=".15s">
@@ -17,7 +18,11 @@
       <div class="row">
         <div class="col-xl-3 col-lg-3 col-md-6">
           <div class="ud-widget">
-            <a href="/" class="ud-footer-logo">
+            <a
+              href="/"
+              class="ud-footer-logo"
+              on:click={() => ga.addEvent('event', 'Footer_logo_click')}
+            >
               <div style="display: flex; align-items: center;">
                 <img
                   class="h-[40px]"
@@ -44,7 +49,11 @@
                   >©{new Date().getFullYear()} TaskLyst - v{version}</tiny
                 >
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="mailto:hello@tasklyst.app" target="_blank">
+                <a
+                  href="mailto:hello@tasklyst.app"
+                  target="_blank"
+                  on:click={() => ga.addEvent('event', 'Footer_email_click')}
+                >
                   <i
                     class="lni lni-envelope"
                     style="font-size: 1rem; color: white;"
@@ -70,10 +79,19 @@
             <h5 class="ud-widget-title">Sections</h5>
             <ul class="ud-widget-links">
               <li>
-                <a href={'/#features'}>Features</a>
+                <a
+                  href={'/#features'}
+                  on:click={() => ga.addEvent('event', 'Footer_features_click')}
+                  >Features</a
+                >
               </li>
               <li>
-                <a href={'/#highlights'}>Highlights</a>
+                <a
+                  href={'/#highlights'}
+                  on:click={() =>
+                    ga.addEvent('event', 'Footer_highlights_click')}
+                  >Highlights</a
+                >
               </li>
               <!--
 							<li>
@@ -88,10 +106,20 @@
             <h5 class="ud-widget-title">Legal</h5>
             <ul class="ud-widget-links">
               <li>
-                <a href={'/privacy-policy'}>Privacy policy</a>
+                <a
+                  href={'/privacy-policy'}
+                  on:click={() =>
+                    ga.addEvent('event', 'Footer_privacy_policy_click')}
+                  >Privacy policy</a
+                >
               </li>
               <li>
-                <a href={'/terms-service'}>Terms of service</a>
+                <a
+                  href={'/terms-service'}
+                  on:click={() =>
+                    ga.addEvent('event', 'Footer_terms_service_click')}
+                  >Terms of service</a
+                >
               </li>
             </ul>
           </div>
@@ -101,10 +129,19 @@
             <h5 class="ud-widget-title">Information</h5>
             <ul class="ud-widget-links">
               <li>
-                <a href={'/#faq'}>FAQ</a>
+                <a
+                  href={'/#faq'}
+                  on:click={() => ga.addEvent('event', 'Footer_faq_click')}
+                  >FAQ</a
+                >
               </li>
               <li>
-                <a role="button" href={'/#'} data-cc="c-settings"
+                <a
+                  role="button"
+                  href={'/#'}
+                  data-cc="c-settings"
+                  on:click={() =>
+                    ga.addEvent('event', 'Footer_cookie_preferences_click')}
                   >Cookie preferences</a
                 >
               </li>

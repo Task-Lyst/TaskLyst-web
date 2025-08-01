@@ -3,6 +3,7 @@
   import DownloadButton from './downloadButton.svelte';
   import 'tippy.js/dist/tippy.css';
   import Themeswitch from './themeswitch.svelte';
+  import { ga } from '@beyonk/svelte-google-analytics';
 
   export let id;
 
@@ -106,6 +107,10 @@
             <div align="left">
               <Themeswitch
                 on:toggle={(e) => {
+                  ga.addEvent('event', 'Theme_toggle', {
+                    event_category: 'Theme',
+                    event_label: e.detail ? 'Dark' : 'Light',
+                  });
                   theme = e.detail;
                 }}
               />
