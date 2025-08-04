@@ -36,13 +36,26 @@
         'https://raw.githubusercontent.com/Task-Lyst/TaskLyst/main/releases/changelog.json'
       );
       const data = await response.json();
-      latestVersion.linux_64 = data.linux_64.latest;
-      latestVersion.macos_64 = data.macos_64.latest;
-      latestVersion.windows_64 = data.windows_64.latest;
-      downloadLinks.linux_64 = data.linux_64.releases[data.linux_64.latest].url;
-      downloadLinks.macos_64 = data.macos_64.releases[data.macos_64.latest].url;
+      latestVersion.linux_64 =
+        data.linux_64 && data.linux_64.latest ? data.linux_64.latest : null;
+      latestVersion.macos_64 =
+        data.macos_64 && data.macos_64.latest ? data.macos_64.latest : null;
+      latestVersion.windows_64 =
+        data.windows_64 && data.windows_64.latest
+          ? data.windows_64.latest
+          : null;
+      downloadLinks.linux_64 =
+        data.linux_64 && data.linux_64.releases[data.linux_64.latest]
+          ? data.linux_64.releases[data.linux_64.latest].url
+          : '#';
+      downloadLinks.macos_64 =
+        data.macos_64 && data.macos_64.releases[data.macos_64.latest]
+          ? data.macos_64.releases[data.macos_64.latest].url
+          : '#';
       downloadLinks.windows_64 =
-        data.windows_64.releases[data.windows_64.latest].url;
+        data.windows_64 && data.windows_64.releases[data.windows_64.latest]
+          ? data.windows_64.releases[data.windows_64.latest].url
+          : '#';
     } catch (error) {
       console.error('Failed to fetch version info:', error);
     } finally {
