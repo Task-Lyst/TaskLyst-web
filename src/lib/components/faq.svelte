@@ -32,7 +32,7 @@
         <FaqItem
           id="collapseTwo"
           question="Which operating systems are supported?"
-          answer="TaskLyst currently works on Windows and Linux. A macOS version is coming soon, and we’re also planning mobile apps for iOS and Android."
+          answer="TaskLyst currently works on Windows and Linux. A macOS version is coming soon, and I'm also planning mobile apps for iOS and Android."
           delay=".15s"
         />
         <FaqItem
@@ -52,7 +52,7 @@
         <FaqItem
           id="collapseFive"
           question="Will my data sync across devices?"
-          answer="Cross-device sync is part of our upcoming PRO features. We're working on an efficient, secure solution for real-time synchronization."
+          answer="Cross-device sync is part of our upcoming PRO features. I'm working on an efficient, secure solution for real-time synchronization."
           delay=".15s"
         />
         <FaqItem
